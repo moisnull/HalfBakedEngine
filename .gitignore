@@ -32,4 +32,4 @@
 *.app
 
 # CMake build directories
-cmake_build_debug/
+cmake-build-debug/
