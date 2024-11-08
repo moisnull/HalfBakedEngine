@@ -1,4 +1,0 @@
-/home/moisnull/Projects/HalfBakedEngine/cmake-build-debug/CMakeFiles/glad.dir
-/home/moisnull/Projects/HalfBakedEngine/cmake-build-debug/CMakeFiles/HalfBakedEngine.dir
-/home/moisnull/Projects/HalfBakedEngine/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/moisnull/Projects/HalfBakedEngine/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -5,8 +5,7 @@
 #ifndef RENDER_H
 #define RENDER_H
 
-char* readVertexShaderFile();
-char* readFragmentShaderFile();
+char* readShaderFile();
 
 void render();
 

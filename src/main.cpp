@@ -1,9 +1,10 @@
-#include "../include/glad.h"
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
-
+#include <filesystem>
 #include <iostream>
-
+#include <experimental/filesystem>
 #include "render.h"
+
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void getResolution();
@@ -63,9 +64,9 @@ int handleDisplay(GLFWwindow *window) {
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-    if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress)))
+    if (glewInit() != GLEW_OK)
     {
-        std::cout << "Failed to initialize GLAD" << std::endl;
+        std::cerr << "Failed to initialize GLEW" << std::endl;
         return -1;
     }
 

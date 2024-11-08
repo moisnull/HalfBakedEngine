@@ -1,5 +1,5 @@
 #include <fstream>
-#include "../include/glad.h"
+#include <GL/glew.h>
 #include "render.h"
 #include <iostream>
 
@@ -42,12 +42,12 @@ void render() {
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
     // Define vertex attributes
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), static_cast<void *>(nullptr));
     glEnableVertexAttribArray(0);
 
     // Load and compile vertex shader
-    unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    const char* vertexShaderSource = readShaderFile("../shaders/vertexShader.glsl");
+    const unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
+    const char* vertexShaderSource = readShaderFile("../src/shaders/vertexShader.glsl");
     glShaderSource(vertexShader, 1, &vertexShaderSource, nullptr);
     glCompileShader(vertexShader);
     delete[] vertexShaderSource; // Free memory after usage
@@ -62,7 +62,7 @@ void render() {
 
     // Load and compile fragment shader
     unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    const char* fragmentShaderSource = readShaderFile("../shaders/fragmentShader.glsl");
+    const char* fragmentShaderSource = readShaderFile("../src/shaders/fragmentShader.glsl");
     glShaderSource(fragmentShader, 1, &fragmentShaderSource, nullptr);
     glCompileShader(fragmentShader);
     delete[] fragmentShaderSource; // Free memory after usage
