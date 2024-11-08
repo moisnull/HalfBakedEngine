@@ -11,10 +11,14 @@ message(STATUS "GLFW3_INCLUDE_DIRS: ${GLFW3_INCLUDE_DIRS}")
 # Find and include GLAD
 find_package(OpenGL REQUIRED)
 include_directories(${OPENGL_INCLUDE_DIRS})
-add_library(glad STATIC src/glad.c)
+add_library(glad STATIC src/glad.c
+        src/render.h
+        src/render.cpp)
 
 add_executable(HalfBakedEngine
         src/main.cpp
+        src/render.h
+        src/render.cpp
 )
 
 target_link_libraries(HalfBakedEngine

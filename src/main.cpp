@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+#include "render.h"
+
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void getResolution();
 void processInput(GLFWwindow *window);
@@ -24,6 +26,7 @@ unsigned int SCREEN_HEIGHT = 600;
 int main()
 {
     handleDisplay(window);
+    render();
 }
 
 void processInput(GLFWwindow *window)
@@ -65,16 +68,18 @@ int handleDisplay(GLFWwindow *window) {
         std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
-    while (!glfwWindowShouldClose(window))
-    {
-        processInput(window);
 
+    while (!glfwWindowShouldClose(window)) {
+        processInput(window);
         glClearColor(color.red, color.green, color.blue, color.alpha);
         glClear(GL_COLOR_BUFFER_BIT);
+
+        render();
 
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
+
 
     glfwTerminate();
     return 0;

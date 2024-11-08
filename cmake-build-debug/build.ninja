@@ -55,6 +55,12 @@ build CMakeFiles/glad.dir/src/glad.c.o: C_COMPILER__glad_unscanned_Debug /home/m
   OBJECT_DIR = CMakeFiles/glad.dir
   OBJECT_FILE_DIR = CMakeFiles/glad.dir/src
 
+build CMakeFiles/glad.dir/src/render.cpp.o: CXX_COMPILER__glad_unscanned_Debug /home/moisnull/Projects/HalfBakedEngine/src/render.cpp || cmake_object_order_depends_target_glad
+  DEP_FILE = CMakeFiles/glad.dir/src/render.cpp.o.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/glad.dir
+  OBJECT_FILE_DIR = CMakeFiles/glad.dir/src
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target glad
@@ -63,7 +69,7 @@ build CMakeFiles/glad.dir/src/glad.c.o: C_COMPILER__glad_unscanned_Debug /home/m
 #############################################
 # Link the static library libglad.a
 
-build libglad.a: C_STATIC_LIBRARY_LINKER__glad_Debug CMakeFiles/glad.dir/src/glad.c.o
+build libglad.a: CXX_STATIC_LIBRARY_LINKER__glad_Debug CMakeFiles/glad.dir/src/glad.c.o CMakeFiles/glad.dir/src/render.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/glad.dir
   POST_BUILD = :
@@ -86,6 +92,12 @@ build CMakeFiles/HalfBakedEngine.dir/src/main.cpp.o: CXX_COMPILER__HalfBakedEngi
   OBJECT_DIR = CMakeFiles/HalfBakedEngine.dir
   OBJECT_FILE_DIR = CMakeFiles/HalfBakedEngine.dir/src
 
+build CMakeFiles/HalfBakedEngine.dir/src/render.cpp.o: CXX_COMPILER__HalfBakedEngine_unscanned_Debug /home/moisnull/Projects/HalfBakedEngine/src/render.cpp || cmake_object_order_depends_target_HalfBakedEngine
+  DEP_FILE = CMakeFiles/HalfBakedEngine.dir/src/render.cpp.o.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/HalfBakedEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles/HalfBakedEngine.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target HalfBakedEngine
@@ -94,7 +106,7 @@ build CMakeFiles/HalfBakedEngine.dir/src/main.cpp.o: CXX_COMPILER__HalfBakedEngi
 #############################################
 # Link the executable HalfBakedEngine
 
-build HalfBakedEngine: CXX_EXECUTABLE_LINKER__HalfBakedEngine_Debug CMakeFiles/HalfBakedEngine.dir/src/main.cpp.o | /usr/lib/x86_64-linux-gnu/libglfw.so.3.3 /usr/lib/x86_64-linux-gnu/libOpenGL.so /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libGLU.so libglad.a || libglad.a
+build HalfBakedEngine: CXX_EXECUTABLE_LINKER__HalfBakedEngine_Debug CMakeFiles/HalfBakedEngine.dir/src/main.cpp.o CMakeFiles/HalfBakedEngine.dir/src/render.cpp.o | /usr/lib/x86_64-linux-gnu/libglfw.so.3.3 /usr/lib/x86_64-linux-gnu/libOpenGL.so /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libGLU.so libglad.a || libglad.a
   FLAGS = -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libglfw.so.3.3  /usr/lib/x86_64-linux-gnu/libOpenGL.so  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libGLU.so  libglad.a
   OBJECT_DIR = CMakeFiles/HalfBakedEngine.dir
