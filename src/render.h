@@ -5,8 +5,6 @@
 #ifndef RENDER_H
 #define RENDER_H
 
-char* readShaderFile();
-
 void render();
 
 #endif //RENDER_H

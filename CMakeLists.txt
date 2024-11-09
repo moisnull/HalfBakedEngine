@@ -21,6 +21,8 @@ message(STATUS "GLEW_INCLUDE_DIRS: ${GLEW_INCLUDE_DIRS}")
 add_executable(HalfBakedEngine
         src/main.cpp
         src/render.cpp
+        src/shader.h
+        src/shader.cpp
 )
 
 # Link libraries
