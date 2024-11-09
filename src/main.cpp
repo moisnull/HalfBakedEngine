@@ -1,15 +1,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include <filesystem>
 #include <iostream>
-#include <experimental/filesystem>
 #include "render.h"
-
-
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-void getResolution();
-void processInput(GLFWwindow *window);
-int handleDisplay(GLFWwindow *window);
 
 struct color {
     float red, green, blue, alpha;
@@ -23,6 +15,11 @@ GLFWwindow* window;
 
 unsigned int SCREEN_WIDTH = 800;
 unsigned int SCREEN_HEIGHT = 600;
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void getResolution();
+void processInput(GLFWwindow *window);
+int handleDisplay(GLFWwindow *window);
 
 int main()
 {
