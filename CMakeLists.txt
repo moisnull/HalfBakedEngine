@@ -20,9 +20,13 @@ message(STATUS "GLEW_INCLUDE_DIRS: ${GLEW_INCLUDE_DIRS}")
 # Create executable
 add_executable(HalfBakedEngine
         src/main.cpp
-        src/render.cpp
         src/shader.h
         src/shader.cpp
+        src/texture.cpp
+        src/VBO.cpp
+        src/VAO.cpp
+        src/EBO.h
+        src/EBO.cpp
 )
 
 # Link libraries
@@ -31,6 +35,7 @@ target_link_libraries(HalfBakedEngine
         ${OPENGL_LIBRARIES}
         ${GLEW_LIBRARIES}
         stdc++fs
+        libstb.a
 )
 message(STATUS "GLFW3_LIBRARIES: ${GLFW3_LIBRARIES}")
 message(STATUS "GLEW_LIBRARIES: ${GLEW_LIBRARIES}")

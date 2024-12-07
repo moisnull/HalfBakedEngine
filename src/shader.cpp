@@ -1,7 +1,3 @@
-//
-// Created by moisnull on 11/9/24.
-//
-
 #include "shader.h"
 
 Shader::Shader(const char* vertexPath, const char* fragmentPath) {
@@ -56,12 +52,12 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
 
     // Fragment Shader
     fragment = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragment, 1, &fShaderCode, NULL);
+    glShaderSource(fragment, 1, &fShaderCode, nullptr);
     glCompileShader(fragment);
     // Print compile errors if any
     glGetShaderiv(fragment, GL_COMPILE_STATUS, &success);
     if (!success) {
-        glGetShaderInfoLog(fragment, 512, NULL, infoLog);
+        glGetShaderInfoLog(fragment, 512, nullptr, infoLog);
         std::cerr << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
     };
 
@@ -73,7 +69,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath) {
     // Print linking errors if any
     glGetProgramiv(ID, GL_LINK_STATUS, &success);
     if (!success) {
-        glGetProgramInfoLog(ID, 512, NULL, infoLog);
+        glGetProgramInfoLog(ID, 512, nullptr, infoLog);
         std::cerr << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
     }
 
